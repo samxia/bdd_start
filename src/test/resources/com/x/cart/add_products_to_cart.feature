@@ -16,6 +16,7 @@ Feature: add products to cart
       |3 |pairs  |1.00 |yamei|
       |4 |chairs |2.00   | made in china|
       |5 |peaches |1.0   |fresh          |
+      |6 |grapes  |2.5   |new            |
 
   # Example = Scenario
   Example: add 0 product to cart
@@ -26,20 +27,21 @@ Feature: add products to cart
     Then I should be told the total price is 0
 
     #to show I know the *, instead of and
+  @add_multiple_product
   Scenario: add multiple products to cart
     Given I pick up 2 apples
     #pair here, not pairs
-    * I pick up 1 pair
+    * I pick up 1 pairs
     * I pick up 4 peaches
     * I pick up 2 grapes
     When I add the products to cart
-    Then I should be told the total price is 0
+    Then I should be told the total price is 16.00
 
-
+  @add_some_products
   Scenario Outline: add some products to cart
     Given I pick up <number> <product_name>
     When I add the products to cart
-    Then I should be told the total price is  <amount>
+    Then I should be told the total price is <amount>
 
     #| Data Tables
     Examples:

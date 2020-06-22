@@ -10,7 +10,7 @@ import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
-
+//product picked up
 class  ProductPicked{
     int number;
     Product product;
@@ -46,10 +46,10 @@ public class AnyNameForStepDef {
      */
         int no = Integer.valueOf(entry.get("no"));
         String name = entry.get("name");
-        BigDecimal price =BigDecimal.valueOf(Double.parseDouble(entry.get("price")));
+        Double price =Double.parseDouble(entry.get("price"));
         String note = entry.get("note");
 
-        return new Product(no,name,price,note);
+        return new Product(no,name,BigDecimal.valueOf(price),note);
 
     }
 
@@ -58,12 +58,13 @@ public class AnyNameForStepDef {
     public void the_market_has_the_following_products(List<Product> products){
         //put the DataTable's data to productMap
         //Because this Given is  for Background, it will run every scenario
+        //so set the product map to static
         if(productMap.size() == 0) {
              for (Iterator iter = products.iterator(); iter.hasNext(); ) {
                  Product p = (Product) iter.next();
                  productMap.put(p.getName(), p);
              }
-             System.out.println("Size: " + products.size());
+             //System.out.println("Size: " + products.size());
          }
     }
 
@@ -75,7 +76,11 @@ public class AnyNameForStepDef {
                          productMap.get((product_name))));
  */
         productPicked = new ProductPicked(int1,productMap.get(product_name));
-       // System.out.println("pick up   :" + int1 + "--" + product_name);
+        //System.out.println("pick up   :" + int1 + "--" + product_name);
+        //add the picked product to the list
+        productPickedList.add(productPicked);
+        //Product p =productMap.get(product_name);
+        //System.out.println(p.getName() + p.getPrice());
 
     }
 
@@ -84,25 +89,35 @@ public class AnyNameForStepDef {
          for(Iterator iter =  productPickedList.iterator();iter.hasNext();)
          {
              ProductPicked pp=(ProductPicked)iter.next();
+            //product env,should not do this
+             if(pp.number == 0)
+             {
+                 return;
+             }
              cart.add(pp.product,pp.number);
          }
     }
-    @Then("I should be told the total price is {int}")
+  /*  @Then("I should be told the total price is {int}}")
     public void i_should_be_told_the_total_price_is(Integer int1) {
-        assertEquals(int1,cart.totalPrice);
-        cart.print();
-        //throw new io.cucumber.java.PendingException();
-    }
 
+        throw new io.cucumber.java.PendingException();
+    }
+ */
     @Given("pick up {int} rices")
     public void pick_up_rices(Integer int1) {
-        System.out.println(cart.totalPrice);
+        throw new io.cucumber.java.PendingException();
     }
 
     @Then("I should be told {string}")
     public void i_should_be_told(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("I should be told the total price is {double}")
+    public void i_should_be_told_the_total_price_is(double db) {
+        assertEquals(BigDecimal.valueOf(db),cart.totalPrice);
+        cart.print();
     }
 
 }
