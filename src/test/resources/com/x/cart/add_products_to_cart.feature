@@ -17,8 +17,7 @@ Feature: add products to cart
       |4 |chairs |2.00   | made in china|
       |5 |peaches |1.0   |fresh          |
 
-
-  #
+  # Example = Scenario
   Example: add 0 product to cart
     here can place descriptions, as long as no line starts with a keyword.
     #apple here , not apples
