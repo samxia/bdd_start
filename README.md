@@ -1,3 +1,5 @@
+Some methods need to be implement further
+<p>
 $mvn test -Dcucumber.filter.tags="@add_to_cart"
 <br>to run cart relative feature
 <br>
