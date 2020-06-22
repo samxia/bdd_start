@@ -9,5 +9,7 @@ Feature: Is it Friday yet?
   Examples:
     |day            |answer|
     |Friday         |TGIF|
+    |Monday         |Nope|
     |Sunday         |Nope|
     |anything else! |Nope|
+
