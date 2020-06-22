@@ -1,10 +1,10 @@
 package com.x.cart;
 
 /**
- * copy from http://www.monkey1024.com/javase/596
- * for using BDD Cucumber
- * author:sam
- * date:2020-6-22
+ * Copy from http://www.monkey1024.com/javase/596
+ * For using BDD Cucumber
+ * Modified by:sam
+ * Date:2020-6-22
  */
 
 import java.math.BigDecimal;
@@ -13,14 +13,24 @@ public class Product {
     private int no;
     private String name;
     private BigDecimal price;
+    private String note;// add this, for using Doc Strings in BDD Cucumber
 
     public Product() {
     }
 
-    public Product(int no, String name, BigDecimal price) {
+    public Product(int no, String name, BigDecimal price,String note) {
         this.no = no;
         this.name = name;
         this.price = price;
+        this.note = note;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public void setNo(int no) {

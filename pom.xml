@@ -6,7 +6,7 @@
     <artifactId>cucumber-java-skeleton</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>Shouty</name>
+    <name>LearnBDDCucumber</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +15,7 @@
         <cucumber.version>6.1.1</cucumber.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.surefire.version>2.22.1</maven.surefire.version>
+        <selenium.selemium.version>3.141.59</selenium.selemium.version>
     </properties>
 
     <dependencies>
@@ -22,7 +23,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium.selemium.version}</version>
         </dependency>
 
         <dependency>

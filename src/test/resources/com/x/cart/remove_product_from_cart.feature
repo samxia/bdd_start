@@ -11,7 +11,7 @@ Feature: take the product out from cart
       Then the answer should be "ok"
       And the total price should not be 0
 
-      Scenario:take all the products from cart
+      Scenario:take all the products out from cart
         Given the cart is not empty
         When take all the products from cart
         Then the totoal price should be 0

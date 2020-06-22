@@ -1,5 +1,15 @@
-$mvn test
+$mvn test -Dcucumber.filter.tags="@friday"
+to run is_it_friday.feature
 
-From sam xia.
+$mvn test -Dcucumber.filter.tags="@cart"
+to run cart relative feature
 
-今天应该是BDD cucumber入门吧。
+$mvn test -Dcucumber.filter.tags="@cart or @friday"
+to run both
+
+
+how to loop?
+
+Need to learn:
+ custom Cucumber reporting plugin
+

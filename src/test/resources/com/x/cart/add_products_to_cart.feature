@@ -1,41 +1,56 @@
-@cart
+#language: en
+@cart @add_to_cart
 Feature: add products to cart
   Add some products to cart
-  Required the number of products and the name of products
+  Only need  the number of products and the name of products
   #above 2 lines are available for reporting(included by default in html reports)
 
   #this is a comment,Block comments are currently not supported by Gherkin
 
   Background:
-    Given I have logged into my account
+    #do not consider the stock
+    Given The market has the following products:
+      |no|name|price|note  |
+      |1 |apples|3.00   |haochi|
+      |2 |bananas|2.00 |good|
+      |3 |pairs  |1.00 |yamei|
+      |4 |chairs |2.00   | made in china|
+      |5 |peaches |1.0   |fresh          |
+
 
   #
   Example: add 0 product to cart
     here can place descriptions, as long as no line starts with a keyword.
-    Given add 0 apple to cart
+    #apple here , not apples
+    Given I pick up 0 apple
     When I add the products to cart
     Then I should be told the total price is 0
 
+    #to show I know the *, instead of and
   Scenario: add multiple products to cart
-    Given add 2 apple to cart
-    * add 3 pair to cart
-    * add 4 peach to cart
-    * add 2 grape to cart
+    Given I pick up 2 apples
+    #pair here, not pairs
+    * I pick up 1 pair
+    * I pick up 4 peaches
+    * I pick up 2 grapes
     When I add the products to cart
-    Then I should be told the total price is not 0
+    Then I should be told the total price is 0
 
-    # "" Doc Strings
+
   Scenario Outline: add some products to cart
-    Given add "<number>" "<product>" to cart
+    Given I pick up <number> <product_name>
     When I add the products to cart
-    Then I should be told the total price is "<amount>"
+    Then I should be told the total price is  <amount>
 
     #| Data Tables
     Examples:
-      |2            |apple|0|
-      |3         |pairs|0|
-      |8         |banana|0|
+      |number |product_name|amount|
+      |2      |apples|6.00       |
+      |3      |pairs|3.00      |
+      |8      |bananas|16.00      |
 
-
-
+  Scenario: add a product which does not belong to this market to cart
+    Given pick up 10 rices
+    When I add the products to cart
+    Then I should be told "we do not have rice"
 
