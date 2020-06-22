@@ -16,7 +16,7 @@ import java.util.Set;
 
 /**
  * 购物车类
- *
+ *里面实现商品的添加、删除、总价，清空等功能
  */
 public class ShopCart {
 
