@@ -1,14 +1,15 @@
+$mvn test -Dcucumber.filter.tags="@add_to_cart"
+<br>to run cart relative feature
+<br>
 $mvn test -Dcucumber.filter.tags="@friday"
+<br>
 to run is_it_friday.feature
 
-$mvn test -Dcucumber.filter.tags="@add_to_cart"
-to run cart relative feature
-
 $mvn test -Dcucumber.filter.tags="@add_to_cart or @friday"
-to run both
+<br>to run both
 
 
 
 Need to learn:
- custom Cucumber reporting plugin
+ <br>custom Cucumber reporting plugin
 
