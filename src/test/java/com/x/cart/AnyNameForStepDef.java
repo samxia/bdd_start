@@ -105,13 +105,14 @@ public class AnyNameForStepDef {
  */
     @Given("pick up {int} rices")
     public void pick_up_rices(Integer int1) {
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
     }
 
     @Then("I should be told {string}")
     public void i_should_be_told(String string) {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        //throw new io.cucumber.java.PendingException();
+        System.out.println("no implement");
     }
 
     @Then("I should be told the total price is {double}")
