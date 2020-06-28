@@ -10,7 +10,7 @@ to run is_it_friday.feature
 $mvn test -Dcucumber.filter.tags="@add_to_cart or @friday"
 <br>to run both
 
-
+To show cucumber works
 
 Need to learn:
  <br>custom Cucumber reporting plugin
