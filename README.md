@@ -1,30 +1,30 @@
-ÕâÊÇCucumber+SeleniumÔÚGclubµÇÂ¼¹¦ÄÜµÄ×Ô¶¯»¯²âÊÔÑİÊ¾£º
+ï»¿è¿™æ˜¯Cucumber+Seleniumåœ¨Gclubç™»å½•åŠŸèƒ½çš„è‡ªåŠ¨åŒ–æµ‹è¯•æ¼”ç¤ºï¼š
 
-<h1>ÅäÖÃ·½·¨</h1>
-ÔÚwindows7ÏÂµ÷ÊÔÍ¨¹ı
-<h2>1.¼ì²éfirefoxä¯ÀÀÆ÷µÄ°æ±¾£¬Firefox>=60 </h2>
-<h2>1.ÏÂÔØselenium µ÷ÓÃfirefoxä¯ÀÀÆ÷µÄÇı¶¯</h2>
-ÏÂÔØµØÖ·£º<a href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a>
-¿ÉÔÚ´ËÒ³ÃæËÑË÷¡°.zip¡±,ÏÂÔØOS¶ÔÓ¦°æ±¾
-<h3>ÏÂÔØÍê£¬·ÅÔÚÄ¿Â¼¡±C:\WebDriver\bin¡°ÏÂ£¬´ËÄ¿Â¼¿É¸ü¸Ä£¬¿ÉÔÚÔËĞĞÊ±Í¨¹ıjava³ÌĞòÖ¸¶¨£¬Ò²¿ÉÍ¨¹ımvn´«²Î,Ò²¿ÉÉèÖÃ»·¾³±äÁ¿£¬´ËÑİÊ¾hardcodeÁË</h3>
-ÏêÇéÇë²Î¿¼£º<a href="https://www.selenium.dev/documentation/en/selenium_installation/installing_webdriver_binaries/">
+<h1>é…ç½®æ–¹æ³•</h1>
+åœ¨windows7ä¸‹è°ƒè¯•é€šè¿‡
+<h2>1.æ£€æŸ¥firefoxæµè§ˆå™¨çš„ç‰ˆæœ¬ï¼ŒFirefox>=60 </h2>
+<h2>1.ä¸‹è½½selenium è°ƒç”¨firefoxæµè§ˆå™¨çš„é©±åŠ¨</h2>
+ä¸‹è½½åœ°å€ï¼š<a href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a>
+å¯åœ¨æ­¤é¡µé¢æœç´¢â€œ.zipâ€,ä¸‹è½½OSå¯¹åº”ç‰ˆæœ¬
+<h3>ä¸‹è½½å®Œï¼Œæ”¾åœ¨ç›®å½•â€C:\WebDriver\binâ€œä¸‹ï¼Œæ­¤ç›®å½•å¯æ›´æ”¹ï¼Œå¯åœ¨è¿è¡Œæ—¶é€šè¿‡javaç¨‹åºæŒ‡å®šï¼Œä¹Ÿå¯é€šè¿‡mvnä¼ å‚,ä¹Ÿå¯è®¾ç½®ç¯å¢ƒå˜é‡ï¼Œæ­¤æ¼”ç¤ºhardcodeäº†</h3>
+è¯¦æƒ…è¯·å‚è€ƒï¼š<a href="https://www.selenium.dev/documentation/en/selenium_installation/installing_webdriver_binaries/">
 https://www.selenium.dev/documentation/en/selenium_installation/installing_webdriver_binaries/</a><P>
-²»ĞèÒª°²×°£¬Çë²»Òª¸ÄÃû£¬ÔËĞĞÊ±java»áµ÷ÓÃ
+ä¸éœ€è¦å®‰è£…ï¼Œè¯·ä¸è¦æ”¹åï¼Œè¿è¡Œæ—¶javaä¼šè°ƒç”¨
 
 
 
-<h1>Ê¹ÓÃ·½·¨</h1>
+<h1>ä½¿ç”¨æ–¹æ³•</h1>
 $git clone ....
-<h3>@smoke tag ¶ÔÓ¦µÄÊÇÊäÈëÕıÈ·µÄÓÃ»§ÃûºÍÃÜÂëµÄ²âÊÔÓÃÀı</h3>
+<h3>@smoke tag å¯¹åº”çš„æ˜¯è¾“å…¥æ­£ç¡®çš„ç”¨æˆ·åå’Œå¯†ç çš„æµ‹è¯•ç”¨ä¾‹</h3>
 $ mvn test -Dcucumber.filter.tags="@smoke"
 
-<h3>@login tag ¶ÔÓ¦µÄÊÇÖ´ĞĞÕû¸ölogin featureµÄ²âÊÔÓÃÀı</h3>
+<h3>@login tag å¯¹åº”çš„æ˜¯æ‰§è¡Œæ•´ä¸ªlogin featureçš„æµ‹è¯•ç”¨ä¾‹</h3>
 $ mvn test -Dcucumber.filter.tags="@login"
 
-<p>ÕıÎÄÍê</p>
+<p>æ­£æ–‡å®Œ</p>
 
 
-ÒÔÏÂÊÇÑ§Ï°cucumberÊ±µÄÁ·Ï°£¬¸ÕÈëÃÅ
+ä»¥ä¸‹æ˜¯å­¦ä¹ cucumberæ—¶çš„ç»ƒä¹ ï¼Œåˆšå…¥é—¨,è¿˜å¾—å¤šå‘æˆ˜å‹ä»¬å­¦ä¹ ï¼Œè°¢è°¢ã€‚
 -----------------------------------------------------------------
 $mvn test -Dcucumber.filter.tags="@add_to_cart"
 <br>to run cart relative feature
